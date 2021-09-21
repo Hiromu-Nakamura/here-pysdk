@@ -38,4 +38,6 @@ Next time you start the container, run `docker container start here-pysdk -i`.
 
 ### License
 
+The codes inside of this project are released under the MIT License, see [LICENSE.md](LICENSE.md).
+
 Please refer [Legal, privacy & security](https://legal.here.com/en-gb) about HERE Technologies products.
