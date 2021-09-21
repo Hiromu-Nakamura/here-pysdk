@@ -25,7 +25,7 @@ You need to setup your credential to use HERE Data SDK for Python. Please create
 If you don't know how to get credential, please refer [Credentials Setup](https://developer.here.com/documentation/sdk-python-v2/dev_guide/topics/credentials.html).
 
 #### Volumes
-Volumes mounted to the container is specified in `docker-compose.yml`.
+Volumes mounted to the container is specified in `docker-compose.yml`. Please change the `volumes` part to your original one.
 
 #### How to run
 Run the `docker-compose up`. Jupyter Lab will start up automatically, then copy and paste the URL with your browser. The 8888 port is used for the Jupyter.

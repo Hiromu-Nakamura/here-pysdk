@@ -7,4 +7,5 @@ services:
     ports:
       - "8888:8888" # ports should be double quoted
     volumes:
-      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker:/home/share_w_host
+    # ex. \\wsl$$\Ubuntu\home\data:/home/data
+      - <your host path>:<container path>
