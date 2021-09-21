@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  here-pysdk:
+    container_name: here-pysdk
+    build: .
+    image: here-pysdk # provide image name
+    ports:
+      - "8888:8888" # ports should be double quoted
+    volumes:
+      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker:/home/share_w_host
