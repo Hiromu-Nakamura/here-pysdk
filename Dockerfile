@@ -7,7 +7,9 @@ LABEL maintainer="moorca"
 LABEL description="Micormamba container with HERE Data SDK for Python ${here_version}"
 LABEL version="1.0"
 
+# Japanese env -----------------------------------
 ENV LANG ja_JP.UTF-8
+# ------------------------------------------------
 
 # Copy yml file
 COPY --chown=micromamba:micromamba env.yaml /tmp/env.yaml

@@ -30,8 +30,6 @@ Volumes mounted to the container is specified in `docker-compose.yml`. Please ch
 ### How to run
 Run the `docker-compose up`. Jupyter Lab will start up automatically, then copy and paste the URL with your browser. The 8888 port is used for the Jupyter.
 
-Next time you start the container, run `docker container start here-pysdk -i`.
-
 ### Japanese locale
 If you do not need Japanese locale, please remove corresponding part in Dockerfile.
 
