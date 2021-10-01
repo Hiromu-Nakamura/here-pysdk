@@ -1,9 +1,9 @@
 version: "3.9"
 services:
   here-pysdk:
+    image: here-pysdk # provide image name
     container_name: here-pysdk
     build: .
-    image: here-pysdk # provide image name
     ports:
       - "8888:8888" # ports should be double quoted
     volumes:

@@ -3,7 +3,7 @@ ARG here_version="2.4.0"
 # Base image
 FROM mambaorg/micromamba:latest
 
-LABEL maintainer="moorca"
+LABEL maintainer="Hiromu Nakamrua"
 LABEL description="Micormamba container with HERE Data SDK for Python ${here_version}"
 LABEL version="1.0"
 
@@ -12,14 +12,14 @@ ENV LANG ja_JP.UTF-8
 # ------------------------------------------------
 
 # Copy yml file
-COPY --chown=micromamba:micromamba env.yaml /tmp/env.yaml
+COPY --chown=micromamba:micromamba env.yml /tmp/env.yml
 
 USER root
 
-RUN micromamba install -y -n base -f /tmp/env.yaml && \
+RUN micromamba install -y -n base -f /tmp/env.yml && \
     micromamba clean --all --yes && \
     mkdir /root/.here && \
-    # Install Japanese locale -------------------
+    # Install Japanese locale & font ------------
     apt-get update && \
     apt-get install -y \
         locales \
