@@ -17,12 +17,12 @@ Probably works with Mac and Linux as well, but not tested.
 ### Packages and installed environment
 Python packages will be installed into the "base" environment via conda-forge channel.
 
-You can modify installed packages with `env.yaml` file.
+You can modify installed packages with `env.yml` file.
 
 ### Credential
-You need to setup your credential to use HERE Data SDK for Python. Please create directory named `credentials` and place your credential file (`credentials.properties`)in that directory. The credential file will be copied to the `/root/.here` directory in container, so you will be able to use the SDK soon after the container created.
+You need to setup your credential to use HERE Data SDK for Python. Please create directory named `credentials` and place your credential file (`credentials.properties`)in that directory. The credential file will be copied to the `/home/micromamba/.here` directory in container, so you will be able to use the SDK soon after the container created.
 
-If you don't know how to get credential, please refer [Credentials Setup](https://developer.here.com/documentation/sdk-python-v2/dev_guide/topics/credentials.html).
+If you don't know how to get your credential, please refer [Credentials Setup](https://developer.here.com/documentation/sdk-python-v2/dev_guide/topics/credentials.html).
 
 ### Volumes
 Volumes mounted to the container is specified in `docker-compose.yml`. Please change the `volumes` part to your original one.
