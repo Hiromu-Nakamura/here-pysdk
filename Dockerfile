@@ -27,12 +27,13 @@ USER micromamba
 
 RUN micromamba install -y -n base -f /tmp/env.yml && \
     micromamba clean --all --yes && \
-    mkdir /home/micromamba/.here
+    mkdir /home/micromamba/.here && \
+    mkdir /home/micromamba/share_w_host
 
 COPY ./credentials/credentials.properties /home/micromamba/.here
 
-WORKDIR /home/share_w_host
+WORKDIR /home/micromamba/share_w_host
 
 EXPOSE 8888
 
-CMD ["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser","--allow-root"]
+CMD ["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser"]

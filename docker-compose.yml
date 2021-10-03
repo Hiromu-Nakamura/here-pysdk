@@ -8,4 +8,4 @@ services:
       - "8888:8888" # ports should be double quoted
     volumes:
     # ex. \\wsl$$\Ubuntu\home\data:/home/data
-      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker\python:/home/share_w_host
+      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker\python:/home/micromamba/share_w_host
