@@ -1,4 +1,4 @@
-ARG here_version="2.4.0"
+ARG here_version="2.14.0"
 
 # Base image
 FROM mambaorg/micromamba:latest
@@ -27,7 +27,9 @@ USER micromamba
 
 RUN micromamba install -y -n base -f /tmp/env.yml && \
     micromamba clean --all --yes && \
+    # create directory to store credential
     mkdir /home/micromamba/.here && \
+    # create directory for volume
     mkdir /home/micromamba/share_w_host
 
 COPY ./credentials/credentials.properties /home/micromamba/.here

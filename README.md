@@ -6,11 +6,10 @@ This image is based on [micromamba-docker](https://hub.docker.com/r/mambaorg/mic
 ## Prerequisities
 In order to run this container you'll need docker installed.
 
-Only Windows version are tested.
+Since my environment is Windows with WSL 2 backend, Mac and Linux version are not tested.
 
-* [Windows](https://docs.docker.com/windows/started)
-
-Probably works with Mac and Linux as well, but not tested.
+Docker for windowns
+* [Docker: Install on Windows](https://docs.docker.com/desktop/install/windows-install/)
 
 ## Usage
 
@@ -25,7 +24,7 @@ You need to setup your credential to use HERE Data SDK for Python. Please create
 If you don't know how to get your credential, please refer [Credentials Setup](https://developer.here.com/documentation/sdk-python-v2/dev_guide/topics/credentials.html).
 
 ### Volumes
-Volumes mounted to the container is specified in `docker-compose.yml`. Please change the `volumes` part to your original one.
+Volumes mounted to the container is specified in `docker-compose.yml`. Also, direcotory for the vulume in container is created in Dockerfile. Please change the each of them for your original one.
 
 ### How to run
 Run the `docker-compose up`. Jupyter Lab will start up automatically, then copy and paste the URL with your browser. The 8888 port is used for the Jupyter.
