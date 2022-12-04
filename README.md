@@ -19,12 +19,13 @@ Python packages will be installed into the "base" environment via conda-forge ch
 You can modify installed packages with `env.yml` file.
 
 ### Credential
-You need to setup your credential to use HERE Data SDK for Python. Please create directory named `credentials` and place your credential file (`credentials.properties`)in that directory. The credential file will be copied to the `/home/micromamba/.here` directory in container, so you will be able to use the SDK soon after the container created.
+You need to setup your credential to use HERE Data SDK for Python. Please create directory named `credentials` and place your credential file (`credentials.properties`)in that directory. The credential file will be copied to the `/home/mamberuser/.here` directory in container, so you will be able to use the SDK soon after the container created.
 
 If you don't know how to get your credential, please refer [Credentials Setup](https://developer.here.com/documentation/sdk-python-v2/dev_guide/topics/credentials.html).
 
 ### Volumes
-Volumes mounted to the container is specified in `docker-compose.yml`. Also, direcotory for the vulume in container is created in Dockerfile. Please change the each of them for your original one.
+Volumes mounted to the container is specified in `docker-compose.yml`. Please change directory for the host machine to your own path.
+Working directory is set in the Dockerfile for this mounted volume.
 
 ### How to run
 Run the `docker-compose up`. Jupyter Lab will start up automatically, then copy and paste the URL with your browser. The 8888 port is used for the Jupyter.

@@ -5,7 +5,8 @@ services:
     container_name: here-pysdk
     build: .
     ports:
-      - "8888:8888" # ports should be double quoted
+      - "8888:8888"
     volumes:
-    # ex. \\wsl$$\Ubuntu\home\data:/home/data
-      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker\python:/home/micromamba/share_w_host
+    # ex. \\wsl$$\Ubuntu\home\user_xxx\data_in_host:/home/mambauser/data_in_container
+    # Directory name after mambauser can be modified, but should be the same as the directory name in the WORKDIR of the docker-compose.yml
+      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker\python:/home/mambauser/share_w_host

@@ -5,7 +5,7 @@ FROM mambaorg/micromamba:latest
 
 LABEL maintainer="Hiromu Nakamrua"
 LABEL description="Micormamba container with HERE Data SDK for Python ${here_version}"
-LABEL version="1.0"
+LABEL version="1.2"
 
 # Configure Japanese environment -------------
 ENV LANG ja_JP.UTF-8
@@ -21,20 +21,19 @@ RUN apt-get update && \
 # -------------------------------------------
 
 # Copy env.yml file
-COPY --chown=micromamba:micromamba env.yml /tmp/env.yml
+COPY --chown=$MAMBA_USER:$MAMBA_USER env.yml /tmp/env.yml
 
-USER micromamba
+USER $MAMBA_USER
 
 RUN micromamba install -y -n base -f /tmp/env.yml && \
-    micromamba clean --all --yes && \
-    # create directory to store credential
-    mkdir /home/micromamba/.here && \
-    # create directory for volume
-    mkdir /home/micromamba/share_w_host
+    micromamba clean --all --yes
 
-COPY ./credentials/credentials.properties /home/micromamba/.here
+# Copy credential file of HERE Platform
+COPY ./credentials/credentials.properties /home/$MAMBA_USER/.here/
 
-WORKDIR /home/micromamba/share_w_host
+# Set working directory in the cotainer.
+# Directory name after $MAMBA_USER can be modified, but should be the same as the directory name in the volume part of the docker-compose.yml
+WORKDIR /home/$MAMBA_USER/share_w_host
 
 EXPOSE 8888
 
